@@ -9,5 +9,10 @@ User = get_user_model()
 class UserRegisterForm(forms.UserCreationForm):
     class Meta:
         model = User
-        fields = forms.UserCreationForm.Meta.fields + ('dni')
+        fields = forms.UserCreationForm.Meta.fields + ('dni', 'tipo',)
 
+
+class UserEditForm(forms.UserChangeForm):
+    class Meta:
+        model = User
+        fields = forms.UserCreationForm.Meta.fields + ('dni', 'tipo',)

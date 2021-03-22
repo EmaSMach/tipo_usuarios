@@ -1,0 +1,18 @@
+{% extends 'cuentas/base.html' %}
+
+
+{% block title %}
+    Iniciar Sesión
+{% endblock title %}
+    
+{% block content %}
+<form action="." method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Iniciar Sesión">
+    <input type="reset" value="Cancelar">
+</form>
+<a href="{% url 'register' %}">Registrarme</a>
+{% endblock content %}
+    
+    
